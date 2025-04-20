@@ -1,0 +1,37 @@
+# Plik .env z danymi wrażliwymi
+.env
+
+# Maven
+/target
+!.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven-wrapper.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+out/
+
+# VS Code
+.vscode/
+
+# System plików
+.DS_Store
+Thumbs.db
+
+# Logi
+*.log
+
+# Testowe pliki
+*.tmp
+*.bak
+*.swp
+
+# Pliki środowiskowe
+.env.local
+.env.*
+!.env.example
+
+
+
