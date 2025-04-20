@@ -1,8 +1,6 @@
 spring:
   application:
     name: user-service
-  config:
-    location: /,file:../.env
   datasource:
     url: ${DB_URL_USER}
     username: ${DB_USERNAME_USER}
