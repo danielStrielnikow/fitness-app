@@ -7,6 +7,9 @@ import pl.fitness.activityservice.dto.ActivityResponse;
 import pl.fitness.activityservice.model.Activity;
 import pl.fitness.activityservice.repo.ActivityRepository;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 @RequiredArgsConstructor
 public class ActivityService {
@@ -27,7 +30,20 @@ public class ActivityService {
         return mapToResponse(savedActivity);
     }
 
-    private ActivityResponse mapToResponse(Activity activity){
+    public List<ActivityResponse> getUserActivities(String userId) {
+        List<Activity> activities = activityRepository.findByUserId(userId);
+        return activities.stream()
+                .map(this::mapToResponse)
+                .toList();
+    }
+
+    public ActivityResponse getActivityById(String activityId) {
+        return activityRepository.findById(activityId)
+                .map(this::mapToResponse)
+                .orElseThrow(() -> new  RuntimeException("Activity not found with id:" + activityId));
+    }
+
+    private ActivityResponse mapToResponse(Activity activity) {
         ActivityResponse response = new ActivityResponse();
         response.setId(activity.getId());
         response.setUserId(activity.getUserId());
