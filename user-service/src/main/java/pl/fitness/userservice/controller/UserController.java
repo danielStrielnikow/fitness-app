@@ -1,7 +1,7 @@
 package pl.fitness.userservice.controller;
 
 import jakarta.validation.Valid;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pl.fitness.userservice.dto.RegisterRequest;
@@ -10,7 +10,7 @@ import pl.fitness.userservice.service.UserService;
 
 @RestController
 @RequestMapping("/api/users")
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class UserController {
     private final UserService userService;
 

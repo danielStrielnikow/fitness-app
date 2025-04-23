@@ -7,4 +7,9 @@ spring:
   data:
     mongodb:
       uri: ${MONGO_URI_ACTIVITY}
-      database: f${MONGO_DATABASE_ACTIVITY}
+      database: ${MONGO_DATABASE_ACTIVITY}
+
+eureka:
+  client:
+    eureka-url:
+      defaultZone: ${EUREKA_URL}

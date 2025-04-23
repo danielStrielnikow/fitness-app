@@ -1,6 +1,6 @@
 package pl.fitness.userservice.service;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.fitness.userservice.dto.RegisterRequest;
 import pl.fitness.userservice.dto.UserResponse;
@@ -8,7 +8,7 @@ import pl.fitness.userservice.model.User;
 import pl.fitness.userservice.repo.UserRepository;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class UserService {
     private final UserRepository userRepository;
 
