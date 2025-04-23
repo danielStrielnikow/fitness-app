@@ -13,3 +13,7 @@ eureka:
   client:
     eureka-url:
       defaultZone: ${EUREKA_URL}
+
+base:
+  url:
+    user-service: http://USER-SERVICE

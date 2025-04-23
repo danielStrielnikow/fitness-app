@@ -13,7 +13,7 @@ public class UserService {
     private final UserRepository userRepository;
 
 
-    public UserResponse getUserProfile(Long userId) {
+    public UserResponse getUserProfile(String userId) {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new RuntimeException("User Not Found"));
 
@@ -46,5 +46,9 @@ public class UserService {
         userResponse.setUpdateAt(user.getUpdateAt());
 
         return userResponse;
+    }
+
+    public Boolean existByUserId(String userId) {
+        return userRepository.existsById(userId);
     }
 }
