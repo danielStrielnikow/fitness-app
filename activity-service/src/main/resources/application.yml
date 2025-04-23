@@ -7,4 +7,4 @@ spring:
   data:
     mongodb:
       uri: ${MONGO_URI_ACTIVITY}
-      database: ${MONGO_DATABASE_ACTIVITY}
+      database: f${MONGO_DATABASE_ACTIVITY}
