@@ -1,0 +1,12 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: ai-service
+
+
+eureka:
+  client:
+    eureka-url:
+      defaultZone: ${EUREKA_URL}
