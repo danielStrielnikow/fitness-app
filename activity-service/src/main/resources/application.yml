@@ -1,31 +1,9 @@
-server:
-  port: 8082
-
 spring:
+  config:
+    import: "configserver:"
   application:
     name: activity-service
-  data:
-    mongodb:
-      uri: ${MONGO_URI}
-      database: ${MONGO_DATABASE}
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: ${RABBITMQ_USER}
-    password: ${RABBITMQ_PASSWORD}
-
-eureka:
-  client:
-    eureka-url:
-      defaultZone: ${EUREKA_URL}
-
-base:
-  url:
-    user-service: http://USER-SERVICE
-rabbitmq:
-  exchange:
-    name: fitness.exchange
-  queue:
-    name: activity.queue
-  routing:
-    key: activity.tracking
+  cloud:
+    config:
+      uri: ${CONFIG_SERVER_URL}
+      profile: dev

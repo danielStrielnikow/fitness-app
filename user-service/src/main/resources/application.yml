@@ -1,19 +1,9 @@
-server:
-  port: 8081
-
 spring:
+  config:
+    import: "configserver:"
   application:
     name: user-service
-  datasource:
-    url: ${DB_URL_USER}
-    username: ${DB_USERNAME_USER}
-    password: ${DB_PASSWORD_USER}
-  jpa:
-    hibernate:
-      ddl-auto: update
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
-
-eureka:
-  client:
-    eureka-url:
-      defaultZone: ${EUREKA_URL}
+  cloud:
+    config:
+      uri: ${CONFIG_SERVER_URL}
+      profile: dev
