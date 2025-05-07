@@ -1,0 +1,9 @@
+spring:
+  config:
+    import: "configserver:"
+  application:
+    name: gateway-service
+  cloud:
+    config:
+      uri: ${CONFIG_SERVER_URL}
+      profile: dev
